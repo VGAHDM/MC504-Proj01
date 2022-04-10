@@ -1,17 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <pthread.h>
 
 typedef struct struct_args {
-    char * words;
-    char * matrix;
+    char *words;
+    char *matrix;
     int xmax;
     int ymax;
     int zmax;
 } struct_args;
 
-int main()
-{
+void *search_x(void *args){
+    struct_args *arg=(struct_args *) args;
+
+    char *words = arg -> words;
+    char *matrix = arg -> matrix;
+    int xmax = arg -> xmax;
+    int ymax = arg -> ymax;
+    int zmax = arg -> zmax;
+    
+    printf("Primeira palavra: %s", words+100);
+    printf("Xmax: %d, Ymax: %d, Zmax: %d", xmax, ymax, zmax);
+    printf("Primeira letra %c:", *matrix);
+
+    /*
+    Adicionar a estrutura da funcao
+    */
+    return NULL;
+}
+
+
+void main(){
     int xmax,ymax,zmax,numWords;
     FILE *file;
     file = fopen("..\\input\\entrada.txt","r");
@@ -38,21 +58,17 @@ int main()
 
         }
     } 
- 
 
-    /* for(int z = 0; z < zmax; z++)// printa a matriz
-        for(int y = 0; y < ymax; y++){   
-            for(int x = 0; x < xmax; x++){
-                printf("%c", *(matrix+(z*xmax*ymax)+(y*xmax)+x));
-            }
-            printf("\n");
-        }
-    } */ 
-    /* struct_args var; //print do dicionario e teste de struct
-    var.words = words;
-    for(int i = 0; i < numWords*2; i++){
-        printf("%s-",(var.words+i*100));
-    }  */
-    //x,y,z,xy,xz,yz,xyz
-    return 0;
+
+    struct_args argumentos;
+    argumentos.words=words;
+    argumentos.matrix=matrix;
+    argumentos.xmax=xmax;
+    argumentos.ymax=ymax;
+    argumentos.zmax=zmax;
+    
+
+    pthread_t threadx;
+    pthread_create (&threadx, NULL, &search_x, (void *) &argumentos);
+    pthread_join(threadx, NULL);
 }
