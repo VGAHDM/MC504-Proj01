@@ -434,12 +434,13 @@ void *search_yz(void *args){
 
 void print_grid(char *matrix, int xmax, int ymax, int zmax){
     for(int i=0; i<zmax; i++){
-        printf("__________ ");
+        printf(" __________");
     }
     printf("\n");
 
 
     for(int y = 0; y < ymax; y++){   
+        printf("|");
         for(int z = 0; z < zmax; z++){// printa a matriz
             for(int x = 0; x < xmax; x++){
                 printf("%c", *(matrix+(z*xmax*ymax)+(y*ymax)+x));
@@ -451,7 +452,7 @@ void print_grid(char *matrix, int xmax, int ymax, int zmax){
 
 
     for(int i=0; i<zmax; i++){
-        printf("---------- ");
+        printf(" ----------");
     }
     printf("\n\n");
 } 
