@@ -124,7 +124,7 @@ void *search_xy(void *args){
         yInv = ymax-1;
         iterX = x;
         iterXInv = xInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -156,7 +156,7 @@ void *search_xy(void *args){
                         //printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i <(xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }           
@@ -168,7 +168,7 @@ void *search_xy(void *args){
         yInv = ymax-1;
         iterY = y;
         iterYInv = yInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -202,7 +202,7 @@ void *search_xy(void *args){
                         //printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i <(xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }     
@@ -233,7 +233,7 @@ void *search_xz(void *args){
         zInv = zmax-1;
         iterX = x;
         iterXInv = xInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -265,7 +265,7 @@ void *search_xz(void *args){
                         //printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i < (xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }           
@@ -277,7 +277,7 @@ void *search_xz(void *args){
         zInv = zmax-1;
         iterz = z;
         iterzInv = zInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -311,7 +311,7 @@ void *search_xz(void *args){
                        // printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i <(xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }     
@@ -341,7 +341,7 @@ void *search_yz(void *args){
         zInv = zmax-1;
         iterY = y;
         iterYInv = yInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -373,7 +373,7 @@ void *search_yz(void *args){
                        // printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i < (xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }           
@@ -385,7 +385,7 @@ void *search_yz(void *args){
         zInv = zmax-1;
         iterz = z;
         iterzInv = zInv;
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < (xmax+ymax+zmax); i++){
             s[i] = '_';
             sInv[i] = '_';
         }
@@ -419,7 +419,7 @@ void *search_yz(void *args){
                         //printf("________________________\n");
                     }
                 }
-                for(int i = 0; i < 15; i++){
+                for(int i = 0; i < (xmax+ymax+zmax); i++){
                     s[i] = '_';
                     sInv[i] = '_';
                 }     

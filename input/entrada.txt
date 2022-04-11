@@ -1,17 +1,16 @@
-10 10 7 8
+10 10 7 7
 art
 guile
 flecha
 faca
-so
 bruh
 rain
 wind
 amndeartkd
-smcnbvsege
-osadjfhuqe
-alcvmerqet
-iralmceatq
+wmcnbvsege
+isadjfhuqe
+nlcvmerqet
+dralmceatq
 adxzertria
 qerhdsqern
 hfacaroqwa
