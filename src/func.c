@@ -96,6 +96,9 @@ void *search_z(void *args){
 void *search_xy(void *args){
     /* 
     Procura ocorrencia de palavras na direcao xy (no mesmo plano)
+    As variaveis com sufixo inv percorrem os eixos em ordem inversa, ou seja, do valor máximo para o valor mínimo
+    As variaveis com prefixo iter tem o objetivo de iterar no eixo correspondente sem modificar o valor original
+
      */
     struct_args *arg=(struct_args *) args;
 
@@ -120,6 +123,7 @@ void *search_xy(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo X
         while (x < xmax){
             s[iterX] =*(matrix+(z*xmax*ymax)+iterX+(y*ymax));
             sInv[iterXInv] = *(matrix+(z*xmax*ymax)+iterXInv+(y*ymax));
@@ -158,9 +162,8 @@ void *search_xy(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo Y      
         while (y < ymax){
-            
-            
             s[iterY] = *(matrix+(z*xmax*ymax)+x+(iterY*ymax));
             sInv[iterYInv] = *(matrix+(z*xmax*ymax)+x+(iterYInv*ymax));
             iterY++;
@@ -194,6 +197,9 @@ void *search_xy(void *args){
 void *search_xz(void *args){
     /* 
     Procura ocorrencia de palavras na direcao xz (na mesma coluna)
+    As variaveis com sufixo inv percorrem os eixos em ordem inversa, ou seja, do valor máximo para o valor mínimo
+    As variaveis com prefixo iter tem o objetivo de iterar no eixo correspondente sem modificar o valor original
+
      */
     struct_args *arg=(struct_args *) args;
 
@@ -219,6 +225,7 @@ void *search_xz(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo X   
         while (x < xmax){
             s[iterX] = *(matrix+(z*xmax*ymax)+iterX+(y*ymax));
             sInv[iterXInv] = *(matrix+(z*xmax*ymax)+iterXInv+(y*ymax));
@@ -257,6 +264,7 @@ void *search_xz(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo Z   
         while (z < zmax){
             
             
@@ -293,6 +301,9 @@ void *search_xz(void *args){
 void *search_yz(void *args){
     /* 
     Procura ocorrencia de palavras na direcao yz (na mesma linha)
+    As variaveis com sufixo inv percorrem os eixos em ordem inversa, ou seja, do valor máximo para o valor mínimo
+    As variaveis com prefixo iter tem o objetivo de iterar no eixo correspondente sem modificar o valor original
+
      */
     struct_args *arg=(struct_args *) args;
 
@@ -318,6 +329,7 @@ void *search_yz(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo Y  
         while (y < ymax){
             s[iterY] = *(matrix+(z*xmax*ymax)+x+(iterY*ymax));
             sInv[iterYInv] = *(matrix+(z*xmax*ymax)+x+(iterYInv*ymax));
@@ -356,9 +368,8 @@ void *search_yz(void *args){
             s[i] = '_';
             sInv[i] = '_';
         }
+        // Esse bloco encontra as diagonais iterando a partir do eixo Z   
         while (z < zmax){
-            
-            
             s[iterz] =*(matrix+(iterz*xmax*ymax)+x+(y*ymax));
             sInv[iterzInv] = *(matrix+(iterzInv*xmax*ymax)+x+(y*ymax));
             iterz++;
